@@ -1,0 +1,46 @@
+﻿@model BasicSchoolWepApp.Models.EntityFramework.tbl_Ogrenciler
+@{
+    ViewBag.Title = "AddStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-info pb-5">Öğrenci Ekleme Paneli</h2>
+<br />
+<form class="form-group" method="post">
+    <div class="form-group">
+        <label>Adı</label>
+        <input type="text" class="form-control" name="OgrAd" />
+    </div>
+    <div class="form-group">
+        <label>Soyadı</label>
+        <input type="text" class="form-control" name="OgrSoyad" />
+    </div>
+    <div class="form-group">
+        <label>Kulübü</label>
+        @Html.DropDownListFor(c => c.tbl_Kulupler.KulupId,(List<SelectListItem>)ViewBag.listClub,new { @class="form-control"})
+    </div>
+    <div class="form-group">
+        <label>Cinsiyet</label>
+        @Html.DropDownList("OgrCinsiyet", new[]{new SelectListItem(){Value = "Kadın",Text = "Kadın"},new SelectListItem(){Value = "Erkek",Text = "Erkek"}},"Cinsiyet seçiniz...",new {@class="form-control"})
+    </div>
+    <div class="form-group">
+        <label>Telefon</label>
+        <input type="tel" class="form-control" name="OgrTelefon" />
+    </div>
+    <div class="form-group">
+        <label>Eposta</label>
+        <input type="email" class="form-control" name="OgrMail" />
+    </div>
+    <div class="form-group">
+        <label>Fotoğraf</label>
+        <input type="text" class="form-control" name="OgrFotograf" />
+    </div>
+    <div class="form-group">
+        <label>Şifre</label>
+        <input type="text" class="form-control" name="OgrSifre" />
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary">Öğrenci Ekle</button>
+    </div>
+</form>
+

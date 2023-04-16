@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c1f203924d6e4691b020ed041979d943" Name="Diagram1">
+        <EntityTypeShape EntityType="BasicSchoolDbModel.tbl_Dersler" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BasicSchoolDbModel.tbl_Kulupler" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BasicSchoolDbModel.tbl_Notlar" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BasicSchoolDbModel.tbl_Ogrenciler" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="BasicSchoolDbModel.FK_tbl_Notlar_tbl_Dersler" ManuallyRouted="false" />
+        <AssociationConnector Association="BasicSchoolDbModel.FK_tbl_Ogrenciler_tbl_Kulupler" ManuallyRouted="false" />
+        <AssociationConnector Association="BasicSchoolDbModel.FK_tbl_Notlar_tbl_Ogrenciler" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

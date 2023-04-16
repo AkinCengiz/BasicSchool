@@ -1,0 +1,44 @@
+﻿@using BasicSchoolWepApp.Models.EntityFramework
+@model List<tbl_Notlar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-info">Notlar</h2>
+<table class="table table-bordered">
+    <thead>
+    <th>Not ID</th>
+    <th>Öğrenci</th>
+    <th>Ders</th>
+    <th>Sınav 1</th>
+    <th>Sınav 2</th>
+    <th>Sınav 3</th>
+    <th>Proje</th>
+    <th>Ortalama</th>
+    <th>Durum</th>
+    <th>İşlemler</th>
+    </thead>
+    <tbody>
+    @foreach (var not in Model)
+    {
+        <tr>
+            <td>@not.NotId</td>
+            <td>@not.tbl_Ogrenciler.OgrAd @not.tbl_Ogrenciler.OgrSoyad</td>
+            <td>@not.tbl_Dersler.DersAd</td>
+            <td>@not.Sinav1</td>
+            <td>@not.Sinav2</td>
+            <td>@not.Sinav3</td>
+            <td>@not.Proje</td>
+            <td>@not.Ortalama</td>
+            <td>@not.Durum</td>
+            <td>
+                <a href="/Note/DeleteNote/@not.NotId" class="btn btn-danger">Sil</a>
+                <a href="/Note/UpdateNote/@not.NotId" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a href="/Note/AddNote" class="btn btn-info">Not Ekle</a>
+

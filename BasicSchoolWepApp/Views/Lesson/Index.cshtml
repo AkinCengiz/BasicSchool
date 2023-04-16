@@ -1,0 +1,30 @@
+﻿@using BasicSchoolWepApp.Models.EntityFramework;
+@model List<tbl_Dersler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-info">Dersler</h2>
+<table class="table table-bordered mt-3">
+    <thead>
+    <th>Ders ID</th>
+    <th>Ders Adı</th>
+    <th>İşlemler</th>
+    </thead>
+    <tbody>
+    @foreach (var ders in Model)
+    {
+        <tr>
+            <td>@ders.DersId</td>
+            <td>@ders.DersAd</td>
+            <td>
+                <a href="/Lesson/DeleteLesson/@ders.DersId" class="btn btn-danger">Sil</a>
+                <a href="/Lesson/UpdateLesson/@ders.DersId" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a href="/Lesson/AddLesson" class="btn btn-info">Ders Ekle</a>
+

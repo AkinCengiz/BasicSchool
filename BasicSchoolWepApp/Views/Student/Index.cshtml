@@ -1,0 +1,47 @@
+﻿@using BasicSchoolWepApp.Models.EntityFramework;
+@model List<tbl_Ogrenciler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-info">Öğrenci Bilgileri</h2>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Adı</th>
+        <th>Soyadı</th>
+        <th>Kulüp</th>
+        <th>Cinsiyet</th>
+        <th>Telefon</th>
+        <th>Mail</th>
+        <th>Fotoğraf</th>
+        <th>Şifre</th>
+        <th>İşlemler</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var std in Model)
+    {
+        <tr>
+            <td>@std.OgrID</td>
+            <td>@std.OgrAd</td>
+            <td>@std.OgrSoyad</td>
+            <td>@std.tbl_Kulupler.KulupAd</td>
+            <td>@std.OgrCinsiyet</td>
+            <td>@std.OgrTelefon</td>
+            <td>@std.OgrMail</td>
+            <td>@std.OgrFotograf</td>
+            <td>@std.OgrSifre</td>
+            <td>
+                <a href="/Student/DeleteStudent/@std.OgrID" class="btn btn-danger">Sil</a>
+                <a href="/Student/UpdateStudent/@std.OgrID" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a href="/Student/AddStudent" class="btn btn-info">Öğrenci Ekle</a>
+
+

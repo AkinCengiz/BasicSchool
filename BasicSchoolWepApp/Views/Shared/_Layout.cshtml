@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Öğrenci Bilgi Sistemi</title>
+
+         <!-- Bootstrap CSS CDN -->
+        @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">*@
+        <link href="~/Theme/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Our Custom CSS -->
+        <link href="~/Theme/sidebar/bootstrap-3/style5.css" rel="stylesheet" />
+    </head>
+    <body>
+
+
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Öğrenci Bilgi Sistemi</h3>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="/Student/Index">
+                            <i class="glyphicon glyphicon-education"></i>
+                            Öğrenci Paneli
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Note/Index">
+                            <i class="glyphicon glyphicon-list-alt"></i>
+                            Notlar Paneli
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Club/Index">
+                            <i class="glyphicon glyphicon-knight"></i>
+                            Kulüpler Paneli
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Lesson/Index">
+                            <i class="glyphicon glyphicon-book"></i>
+                            Dersler Paneli
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="glyphicon glyphicon-phone-alt"></i>
+                            İletişim Paneli
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+
+                @RenderBody()
+
+            </div>
+        </div>
+
+
+
+
+
+        <!-- jQuery CDN -->
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                     $(this).toggleClass('active');
+                 });
+             });
+         </script>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+﻿@model BasicSchoolWepApp.Models.EntityFramework.tbl_Kulupler
+@{
+    ViewBag.Title = "UpdateClub";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-info pb-5">Kulüp Güncelleme Paneli</h2>
+<br />
+@using (Html.BeginForm("UpdateClub", "Club", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.KulupAd)
+        @Html.TextBoxFor(c => c.KulupAd, new { @class="form-control"})
+    </div>
+    @Html.HiddenFor(c => c.KulupId)
+    <div class="form-group">
+        <button class="btn btn-outline-info">Güncelle</button>
+    </div>
+}
+

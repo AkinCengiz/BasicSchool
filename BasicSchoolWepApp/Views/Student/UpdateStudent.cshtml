@@ -1,0 +1,46 @@
+﻿@model BasicSchoolWepApp.Models.EntityFramework.tbl_Ogrenciler
+@{
+    ViewBag.Title = "UpdateStudent";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-info pb-5">Öğrenci Güncelleme Paneli</h2>
+<br />
+@using (Html.BeginForm("UpdateStudent", "Student", FormMethod.Post))
+{
+    @Html.HiddenFor(s => s.OgrID)
+    <div class="form-group">
+        @Html.LabelFor(s => s.OgrAd)
+        @Html.TextBoxFor(s => s.OgrAd, new { @class="form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(s => s.OgrSoyad)
+        @Html.TextBoxFor(s => s.OgrSoyad, new { @class="form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(s => s.OgrKulup)
+        @Html.DropDownListFor(s => s.tbl_Kulupler.KulupAd, (List<SelectListItem>)ViewBag.listClub,@Model.tbl_Kulupler.KulupAd,new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(s => s.OgrCinsiyet)
+        @Html.DropDownList("OgrCinsiyet", new[]{ new SelectListItem(){ Text = "Kadın", Value = "Kadın"},new SelectListItem(){Text = "Erkek",Value = "Erkek"}},@Model.OgrCinsiyet,new { @class="form-control"} )
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(s => s.OgrTelefon)
+        @Html.TextBoxFor(s => s.OgrTelefon,new { @class="form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(s => s.OgrMail)
+        @Html.TextBoxFor(s => s.OgrMail, new { @class="form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(s => s.OgrFotograf)
+        @Html.TextBoxFor(s => s.OgrFotograf, new { @class="form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(s => s.OgrSifre)
+        @Html.TextBoxFor(s => s.OgrSifre, new { @class="form-control" })
+    </div>
+    <button class="btn btn-info">Güncelle</button>
+}
+

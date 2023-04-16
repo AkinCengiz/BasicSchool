@@ -1,0 +1,22 @@
+﻿@model BasicSchoolWepApp.Models.EntityFramework.tbl_Dersler
+@{
+    ViewBag.Title = "EditLesson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-info pb-5">Ders Güncelleme Paneli</h2>
+<br />
+@using (Html.BeginForm("UpdateLesson", "Lesson", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(l => l.DersAd)
+        @Html.TextBoxFor(l => l.DersAd,new {@class="form-control"})
+    </div>
+    @Html.HiddenFor(l=>l.DersId)
+    <div class="form-group">
+        <button class="btn btn-outline-info">Güncelle</button>
+    </div>
+}
+
+
+ 

@@ -1,0 +1,32 @@
+﻿@using BasicSchoolWepApp.Models.EntityFramework;
+@model List<tbl_Kulupler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-info">Kulüpler</h2>
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Kulüp ID</th>
+        <th>Kulüp ID</th>
+        <th>İşlemler</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var club in Model)
+    {
+        <tr>
+            <td>@club.KulupId</td>
+            <td>@club.KulupAd</td>
+            <td>
+                <a href="/Club/DeleteClub/@club.KulupId" class="btn btn-danger">Sil</a>
+                <a href="/Club/UpdateClub/@club.KulupId" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+<a href="/Club/AddClub" class="btn btn-info">Kulüp Ekle</a>
+
